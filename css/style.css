@@ -14,30 +14,58 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  border-radius: 5px; }
-  .todo__container.todoheader {
-    margin-bottom: 10px; }
-    .todo__container.todoheader__title {
-      font-size: 40px;
-      text-transform: uppercase; }
-      .todo__container.todoheader__title--sub {
-        font-size: 20px; }
-  .todo__container input, .todo__container .submit__btn {
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none; }
-  .todo__container .submit__btn {
-    background: #ff69b4;
-    color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75); }
+
+.todoheader {
+  margin-bottom: 10px; }
+  .todoheader__title {
+    font-size: 50px;
     text-transform: uppercase; }
-    .todo__container .submit__btn:hover {
+    .todoheader__title--sub {
+      font-size: 20px; }
+
+input, .submit__btn {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none; }
+
+.submit__btn {
+  background: #ff69b4;
+  color: #fff;
+  text-transform: uppercase; }
+  .submit__btn:hover {
+    cursor: pointer; }
+
+.todoList__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+  .todoList__form .delete__btn {
+    float: right;
+    color: black;
+    text-decoration: none;
+    margin-top: 16px;
+    margin-right: 10px; }
+    .todoList__form .delete__btn:hover {
       cursor: pointer; }
-  .todo__container .todoList__form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column; }
-    .todo__container .todoList__form.todo__item {
-      margin-left: 5px; }
+
+.todo__item {
+  margin: 10px 0; }
+  .todo__item--text {
+    margin-left: 20px; }
+
+.complete__btn {
+  border: 1px solid #ff69b4;
+  padding: 10px;
+  border-radius: 5px;
+  color: #ff69b4;
+  font-size: 16px; }
+  .complete__btn:hover {
+    cursor: pointer; }
+
+.completed {
+  text-decoration: line-through; }

@@ -25,48 +25,83 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  
-  &.todoheader {
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+.todoheader {
   margin-bottom: 10px;
 
-    &__title {
-      font-size: 40px;
-      text-transform: uppercase;
+  &__title {
+    font-size: 50px;
+    text-transform: uppercase;
 
-      &--sub {
-        font-size: 20px;
-      }
+    &--sub {
+      font-size: 20px;
     }
   }
+}
 
-  input, .submit__btn {
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid $color-grey-2;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
+input, .submit__btn {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid $color-grey-2;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.submit__btn {
+  background: $color-2;
+  color: #fff;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
   }
+}
 
-  .submit__btn {
-    background: $color-2;
-    color: #fff;
-    text-transform: uppercase;
+.todoList__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+
+  & .delete__btn {
+    float: right;
+    color: black;
+    text-decoration: none;
+    margin-top: 16px;
+    margin-right: 10px;
 
     &:hover {
       cursor: pointer;
     }
   }
+}
 
-  .todoList__form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.todo__item {
+  margin: 10px 0;
+
+
+  &--text {
+    margin-left: 20px;
     
-    &.todo__item {
-      margin-left: 5px;
-    }
-
   }
 }
 
+.complete__btn {
+  border: 1px solid $color-2;
+  padding: 10px;
+  border-radius: 5px;
+  color: $color-2;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+}

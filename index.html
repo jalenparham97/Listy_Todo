@@ -9,23 +9,27 @@
   <title>Document</title>
 </head>
 <body>
+
   <section class="todo__container" ng-controller="TodoController as todo">
+
     <section class="todoheader">
-      <h1 class="todoheader__title">Listy</h1>
-      <p class="todoheader__title--sub">A place to store the things you have to do</p>
+      <p class="todoheader__title">Listy TODO</p>
+      <p class="todoheader__title--sub">A place to store the things you have to do!</p>
     </section>
+
     <form class="todoList__form">
       <input type="text" placeholder="Filter your todos">
 
       <ol class="todoList__items">
         <li ng-repeat="task in todo.todoList track by $index" class="todo__item">
-          {{ task.task }}<i class="fas fa-times"></i>
+          <button class="complete__btn">Complete</button>
+          <span class="todo__item--text"><span class="text__span">{{ task.task }}</span><i ng-click="todo.deleteTodo(index)" class="fas fa-times delete__btn"></i></span>
         </li>
       </ol>
 
-      <input type="text" ng-model="newTodo.task" placeholder="Add your todo">
+      <input id="todoInput" type="text" ng-model="newTodo.task" placeholder="Add your todo">
 
-      <button class="submit__btn" ng-click="todo.addTodo(newTodo)">Add</button>
+      <button class="submit__btn" ng-model="delete__btn" ng-click="todo.addTodo(newTodo)">Add</button>
     </form>
     
 

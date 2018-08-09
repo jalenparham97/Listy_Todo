@@ -4,7 +4,7 @@
   "description": "Todo List App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass scss/main.scss css/style.css -w"
   },
   "author": "Jalen Parham",
   "license": "ISC",

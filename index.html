@@ -13,14 +13,21 @@
     <section class="todoheader">
       <h1 class="todoheader__title">Listy</h1>
       <p class="todoheader__title--sub">A place to store the things you have to do</p>
-      <input type="text" placeholder="Filter your todos">
-      <ol>
-        <li ng-repeat="task in todo.todoList track by $index">{{ task.task }}<i class="fas fa-times"></i></li>
-      </ol>
-      <input type="text" ng-model="newTodo.task" placeholder="Add your todo">
-      <button ng-click="todo.addTodo(newTodo)">Add</button>
     </section>
-     
+    <form class="todoList__form">
+      <input type="text" placeholder="Filter your todos">
+
+      <ol class="todoList__items">
+        <li ng-repeat="task in todo.todoList track by $index" class="todo__item">
+          {{ task.task }}<i class="fas fa-times"></i>
+        </li>
+      </ol>
+
+      <input type="text" ng-model="newTodo.task" placeholder="Add your todo">
+
+      <button class="submit__btn" ng-click="todo.addTodo(newTodo)">Add</button>
+    </form>
+    
 
   </section>
    

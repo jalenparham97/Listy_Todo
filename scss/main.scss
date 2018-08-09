@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+$background-color: linear-gradient(to right, #f857a6, #ff5858);
+$color-1: #ff0000;
+$color-2: #ff69b4;
+$color-3: #ff1493;
+$color-grey-1: #bbb;
+$color-grey-2: #eee;
+
+* {
+  margin: 0;
+}
+
+body {
+  background: $background-color;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.todo__container {
+  background: #fff;
+  width: 40%;
+  margin: 100px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  
+  &.todoheader {
+  margin-bottom: 10px;
+
+    &__title {
+      font-size: 40px;
+      text-transform: uppercase;
+
+      &--sub {
+        font-size: 20px;
+      }
+    }
+  }
+
+  input, .submit__btn {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid $color-grey-2;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  .submit__btn {
+    background: $color-2;
+    color: #fff;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .todoList__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    &.todo__item {
+      margin-left: 5px;
+    }
+
+  }
+}
+

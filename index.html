@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <section class="todo__container" ng-controller="TodoController as todo">
+    <section class="todoheader">
+      <h1 class="todoheader__title">Listy</h1>
+      <p class="todoheader__title--sub">A place to store the things you have to do</p>
+      <input type="text" placeholder="Filter your todos">
+      <ol>
+        <li ng-repeat="task in todo.todoList track by $index">{{ task.task }}<i class="fas fa-times"></i></li>
+      </ol>
+      <input type="text" ng-model="newTodo.task" placeholder="Add your todo">
+      <button ng-click="todo.addTodo(newTodo)">Add</button>
+    </section>
+     
+
+  </section>
+   
+
+  <script src="https://code.angularjs.org/1.6.5/angular.min.js"></script>
+  <script src="scripts/module.js"></script>
+  <script src="scripts/ctrl.js"></script>
+</body>
+</html>

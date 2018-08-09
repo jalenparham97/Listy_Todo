@@ -1,0 +1,14 @@
+{
+  "name": "angulartodo",
+  "version": "1.0.0",
+  "description": "Todo List App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jalen Parham",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  }
+}

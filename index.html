@@ -21,15 +21,14 @@
       <input type="text" placeholder="Filter your todos">
 
       <ol class="todoList__items">
-        <li ng-repeat="task in todo.todoList track by $index" class="todo__item">
-          <button class="complete__btn">Complete</button>
-          <span class="todo__item--text"><span class="text__span">{{ task.task }}</span><i ng-click="todo.deleteTodo(index)" class="fas fa-times delete__btn"></i></span>
+        <li ng-repeat="task in todo.todoList track by $index" class="todo__item" ng-class="{completed: task.completed === true}">
+          <button class="complete__btn" ng-click="todo.completedTask($index)" ng-if="task.completed === false">Complete</button>{{ task.task }}<i class="fas fa-times delete__btn" ng-click="todo.deleteTodo($index)"></i>
         </li>
       </ol>
 
       <input id="todoInput" type="text" ng-model="newTodo.task" placeholder="Add your todo">
 
-      <button class="submit__btn" ng-model="delete__btn" ng-click="todo.addTodo(newTodo)">Add</button>
+      <button class="submit__btn" ng-click="todo.addTodo(newTodo); newTodo.task = '' ">Add</button>
     </form>
     
 
@@ -41,3 +40,5 @@
   <script src="scripts/ctrl.js"></script>
 </body>
 </html>
+
+

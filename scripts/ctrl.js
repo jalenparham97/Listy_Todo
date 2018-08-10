@@ -9,11 +9,17 @@ function TodoController() {
       task: newTodo.task,
       completed: false
     });
+    console.log(vm.task);
   }
 
   vm.deleteTodo = (index) => {
     vm.todoList.splice(index, 1);
   }
+
+  vm.completedTask = (index) => {
+    vm.todoList[index].completed = true;
+    console.log("completed");
+  } 
 }
 
 angular

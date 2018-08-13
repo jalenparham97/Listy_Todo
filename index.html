@@ -18,17 +18,17 @@
     </section>
 
     <form class="todoList__form">
-      <input type="text" placeholder="Filter your todos">
+      <input type="text" placeholder="Filter your todos" ng-model="search.task">
 
       <ol class="todoList__items">
-        <li ng-repeat="task in todo.todoList track by $index" class="todo__item" ng-class="{completed: task.completed === true}">
-          <button class="complete__btn" ng-click="todo.completedTask($index)" ng-if="task.completed === false">Complete</button>{{ task.task }}<i class="fas fa-times delete__btn" ng-click="todo.deleteTodo($index)"></i>
+        <li ng-repeat="task in todo.todoList | filter: search track by $index" class="todo__item" ng-class="{completed: task.completed === true}">
+          <button class="complete__btn" ng-click="todo.completedTask($index)" ng-if="task.completed === false">Complete</button><span ng-hide="task.edit">{{ task.task }}</span><input value="{{ task.task }}" ng-model="task.task" ng-show="task.edit" ng-blur="todo.editTaskDone($index)"><i class="fas fa-edit edit__btn" ng-click="todo.editTask($index)"></i><i class="fas fa-times delete__btn" ng-click="todo.deleteTodo($index)"></i>
         </li>
       </ol>
 
       <input id="todoInput" type="text" ng-model="newTodo.task" placeholder="Add your todo">
 
-      <button class="submit__btn" ng-click="todo.addTodo(newTodo); newTodo.task = '' ">Add</button>
+      <button class="submit__btn" ng-click="todo.addTodo(newTodo); newTodo.task = ''">Add</button>
     </form>
     
 

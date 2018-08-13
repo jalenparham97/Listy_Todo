@@ -46,6 +46,15 @@ input, .submit__btn {
   display: flex;
   justify-content: center;
   flex-direction: column; }
+  .todoList__form .edit__btn {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%); }
+    .todoList__form .edit__btn:hover {
+      cursor: pointer; }
   .todoList__form .delete__btn {
     color: black;
     text-decoration: none;

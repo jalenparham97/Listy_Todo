@@ -67,6 +67,20 @@ input, .submit__btn {
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  & .edit__btn {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
   
 
   & .delete__btn {

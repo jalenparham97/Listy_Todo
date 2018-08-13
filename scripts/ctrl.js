@@ -7,7 +7,8 @@ function TodoController() {
   vm.addTodo = (newTodo) => {
     vm.todoList.push({
       task: newTodo.task,
-      completed: false
+      completed: false,
+      edit: false
     });
     console.log(vm.task);
   }
@@ -19,6 +20,16 @@ function TodoController() {
   vm.completedTask = (index) => {
     vm.todoList[index].completed = true;
     console.log("completed");
+  } 
+
+  vm.editTask = (index) => {
+    vm.todoList[index].edit = true;
+    
+  } 
+
+  vm.editTaskDone = (index) => {
+    vm.todoList[index].edit = false;
+    console.log("task has been editted");
   } 
 }
 
